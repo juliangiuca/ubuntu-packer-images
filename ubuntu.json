@@ -42,13 +42,19 @@
               "scripts/update-apt.sh",
               "scripts/install-common-tools.sh",
               "scripts/install-nodejs.sh",
-              "scripts/install-ruby.sh",
               "scripts/install-redis.sh",
               "scripts/install-postgresql.sh",
               "scripts/install-fluentd.sh",
               "scripts/clean-apt.sh"
           ],
           "execute_command": "sudo -S sh -c '{{ .Vars }} {{ .Path }}'"
+        },
+        {
+          "type": "shell",
+          "scripts": [
+              "scripts/install-ruby.sh",
+              "scripts/install-apps.sh"
+          ]
         }
     ]
 }

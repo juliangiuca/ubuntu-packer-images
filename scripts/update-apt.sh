@@ -7,7 +7,7 @@ export DEBIAN_FRONTEND=noninteractive
 
 cp /etc/apt/sources.list /etc/apt/sources.list~
 sed -Ei 's/^# deb-src /deb-src /' /etc/apt/sources.list
-sed -Ei 's/archive.ubuntu.com/us-east-1.ec2.archive.ubuntu.com/' /etc/apt/sources.list
+sed -Ei 's/http:\/\/archive.ubuntu.com/http:\/\/us-east-1.ec2.archive.ubuntu.com/' /etc/apt/sources.list
 
 # Retrieve APT package sources
 apt-get update -qq

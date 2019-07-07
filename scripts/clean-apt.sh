@@ -2,6 +2,9 @@
 
 set -euf -o pipefail
 
+chown ubuntu -R /home/ubuntu/.config
+chown ubuntu -R /home/ubuntu/.npm
+
 apt-get autoremove -y
 apt-get clean -y
 
