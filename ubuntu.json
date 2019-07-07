@@ -45,6 +45,7 @@
               "scripts/install-ruby.sh",
               "scripts/install-redis.sh",
               "scripts/install-postgresql.sh",
+              "scripts/install-fluentd.sh",
               "scripts/clean-apt.sh"
           ],
           "execute_command": "sudo -S sh -c '{{ .Vars }} {{ .Path }}'"

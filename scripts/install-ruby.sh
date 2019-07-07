@@ -2,4 +2,4 @@
 
 set -euf -o pipefail
 
-sudo apt-get install -y ruby-full
+snap install ruby --classic
