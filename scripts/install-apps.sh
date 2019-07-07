@@ -6,7 +6,7 @@ git clone https://github.com/juliangiuca/logginator.git
 git clone https://github.com/juliangiuca/logginator-db.git
 
 cd logginator-db
-bundle
+gem install bundler && bundle
 
 cd ../logginator
 npm i
