@@ -33,7 +33,7 @@
             "type": "shell",
             "inline":[
                 "ls -al /home/ubuntu",
-                "cat /home/ubuntu/welcome.txt",
+                "cat /home/ubuntu/welcome.txt"
             ]
         },
         {
