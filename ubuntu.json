@@ -25,18 +25,6 @@
     ],
     "provisioners": [
         {
-            "type": "file",
-            "source": "./scripts/welcome.txt",
-            "destination": "/home/ubuntu/"
-        },
-        {
-            "type": "shell",
-            "inline":[
-                "ls -al /home/ubuntu",
-                "cat /home/ubuntu/welcome.txt"
-            ]
-        },
-        {
           "type": "shell",
           "scripts": [
               "scripts/update-apt.sh",
