@@ -2,4 +2,4 @@
 
 set -euf -o pipefail
 
-snap install ruby --classic
+RUBY_VERSION=2.6.3 snap install ruby --classic
