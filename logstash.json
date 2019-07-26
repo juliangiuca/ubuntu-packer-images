@@ -1,0 +1,49 @@
+{
+    "variables": {
+        "aws_access_key"    :  "{{env `AWS_ACCESS_KEY_ID`}}",
+        "aws_secret_key"    :  "{{env `AWS_SECRET_ACCESS_KEY`}}",
+        "region"            :  "us-east-1",
+        "vpc_id"            :  "{{env `VPC_ID`}}",
+        "subnet_id"         :  "{{env `SUBNET_ID`}}",
+        "security_group_id" :  "{{env `SECURITY_GROUP_ID`}}"
+    },
+    "builders": [
+        {
+            "access_key": "{{user `aws_access_key`}}",
+            "ami_name": "logstash-template-ubuntu-{{timestamp}}",
+            "instance_type": "t2.large",
+            "region": "us-east-1",
+            "secret_key": "{{user `aws_secret_key`}}",
+            "source_ami": "ami-026c8acd92718196b",
+            "ssh_username": "ubuntu",
+            "type": "amazon-ebs",
+            "vpc_id": "{{user `vpc_id`}}",
+            "subnet_id": "{{user `subnet_id`}}",
+            "security_group_id": "{{user `security_group_id`}}",
+            "associate_public_ip_address": "true"
+        }
+    ],
+    "provisioners": [
+        {
+          "type": "shell",
+          "scripts": [
+              "scripts/update-apt.sh",
+              "scripts/install-common-tools.sh",
+              "scripts/install-nodejs.sh",
+              "scripts/install-redis.sh",
+              "scripts/install-postgresql.sh",
+              "scripts/install-logstash.sh",
+              "scripts/clean-apt.sh"
+          ],
+          "execute_command": "sudo -S sh -c '{{ .Vars }} {{ .Path }}'"
+        },
+        {
+          "type": "shell",
+          "scripts": [
+              "scripts/install-ruby.sh",
+              "scripts/install-apps.sh"
+          ]
+        }
+    ]
+}
+
