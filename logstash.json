@@ -30,8 +30,6 @@
               "scripts/update-apt.sh",
               "scripts/install-common-tools.sh",
               "scripts/install-nodejs.sh",
-              "scripts/install-redis.sh",
-              "scripts/install-postgresql.sh",
               "scripts/install-logstash.sh",
               "scripts/clean-apt.sh"
           ],
@@ -40,8 +38,7 @@
         {
           "type": "shell",
           "scripts": [
-              "scripts/install-ruby.sh",
-              "scripts/install-apps.sh"
+              "scripts/install-node-apps.sh"
           ]
         }
     ]
