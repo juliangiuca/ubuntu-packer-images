@@ -10,7 +10,7 @@
     "builders": [
         {
             "access_key": "{{user `aws_access_key`}}",
-            "ami_name": "fluentd-template-ubuntu-{{timestamp}}",
+            "ami_name": "nr-fluentd-template",
             "instance_type": "t2.large",
             "region": "us-east-1",
             "secret_key": "{{user `aws_secret_key`}}",
